@@ -1,0 +1,13 @@
+diff -ur snakebite-py3-3.0.5/setup.py snakebite-py3-3.0.5-patched/setup.py
+--- setup.py	2019-11-14 19:09:42.000000000 +0100
++++ setup.py	2021-02-13 20:41:40.983558103 +0100
+@@ -42,8 +42,7 @@
+         sys.exit(errno)
+ 
+ install_requires = [
+-    'protobuf>2.4.1',
+-    'argparse']
++    'protobuf>2.4.1']
+ 
+ extras_require = {
+     'kerberos': [
