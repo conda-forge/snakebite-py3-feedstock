@@ -8,9 +8,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/snakebite-py3-{{ version }}.tar.gz
   sha256: 2026f2f755b63503145b6ab3037ca2b5905c9d1c68d3e7903b90ab94ac7fa260
+  patches:
+    - 0001-remove-argparse.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -26,6 +28,10 @@ test:
   imports:
     - snakebite
     - snakebite.protobuf
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://github.com/internetarchive/snakebite-py3
