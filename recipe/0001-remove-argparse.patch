@@ -5,9 +5,9 @@ diff -ur snakebite-py3-3.0.5/setup.py snakebite-py3-3.0.5-patched/setup.py
          sys.exit(errno)
  
  install_requires = [
--    'protobuf>2.4.1',
+-    'protobuf>2.4.1,<4',
 -    'argparse']
-+    'protobuf>2.4.1']
++    'protobuf>2.4.1,<4']
  
  extras_require = {
      'kerberos': [

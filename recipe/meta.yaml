@@ -1,18 +1,18 @@
 {% set name = "snakebite-py3" %}
-{% set version = "3.0.5" %}
+{% set version = "3.0.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/snakebite-py3-{{ version }}.tar.gz
-  sha256: 2026f2f755b63503145b6ab3037ca2b5905c9d1c68d3e7903b90ab94ac7fa260
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/snakebite_py3-{{ version }}.tar.gz
+  sha256: f6586f79610ca466506fd8507970b3fc059b0b5144e7a8f53e9474aaed2fc637
   patches:
     - 0001-remove-argparse.patch
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -22,8 +22,8 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
-    - protobuf >2.4.1
     - python >={{ python_min }}
+    - protobuf >2.4.1,<4
 
 test:
   imports:
